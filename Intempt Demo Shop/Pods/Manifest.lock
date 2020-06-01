@@ -1,0 +1,54 @@
+PODS:
+  - Alamofire (5.1.0)
+  - Auth0 (1.25.0):
+    - JWTDecode
+    - SimpleKeychain
+  - FBSDKCoreKit (7.0.0):
+    - FBSDKCoreKit/Basics (= 7.0.0)
+    - FBSDKCoreKit/Core (= 7.0.0)
+  - FBSDKCoreKit/Basics (7.0.0)
+  - FBSDKCoreKit/Core (7.0.0):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (7.0.0):
+    - FBSDKLoginKit/Login (= 7.0.0)
+  - FBSDKLoginKit/Login (7.0.0):
+    - FBSDKCoreKit (~> 7.0.0)
+  - JWTDecode (2.4.1)
+  - Kingfisher (5.14.0):
+    - Kingfisher/Core (= 5.14.0)
+  - Kingfisher/Core (5.14.0)
+  - SimpleKeychain (0.11.1)
+  - Stripe (19.2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Auth0
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - Kingfisher
+  - Stripe
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Auth0
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - JWTDecode
+    - Kingfisher
+    - SimpleKeychain
+    - Stripe
+
+SPEC CHECKSUMS:
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  Auth0: 358dbd972851942cf4a5e5ce8cd14bcd3ad969fa
+  FBSDKCoreKit: 8ad31cd09f793d1d7e84cf20fd6cebfe80ad318d
+  FBSDKLoginKit: 5d1e321dc45ab1fa09198b77fc17c32a06f008c0
+  JWTDecode: 4bd4da0cdf0f8154fd467fa48499f34ec057fb88
+  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  SimpleKeychain: 0c657949c7afff92337d2ff64052d5eb5c53823e
+  Stripe: d481c2dab9a892fd923f097f854661217f70dc7f
+
+PODFILE CHECKSUM: c96f61f0ff515b843e68476ceb97fe1fe890b555
+
+COCOAPODS: 1.8.4

@@ -1,0 +1,6 @@
+framework module Pods_Intempt_Demo_Shop {
+  umbrella header "Pods-Intempt Demo Shop-umbrella.h"
+
+  export *
+  module * { export * }
+}
