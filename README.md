@@ -1,11 +1,12 @@
 # intempt-Ios-Demo-App
 ##Hotel Booking App
-## In the following demo application, after running it will display a Login Screen. On clicking the login button it fires the IdentifyVisitor function .
-<img src="https://github.com/intempt/ios-sdk/blob/custoEvent/screenshots/3.png" width=“50>
+## In the following demo application, after running it will display a Hotel Room Booking Screen. 
+<img src="https://github.com/intempt/intempt-ios-demo/blob/master/Screenshots/1.png" width=“50>
 
-##  Here on every touch event the tracker will fetch event details.
+##  Login in with Facebook Screen 
+<img src="https://github.com/intempt/intempt-ios-demo/blob/master/Screenshots/2.png" width=“50>
+<img src="https://github.com/intempt/intempt-ios-demo/blob/master/Screenshots3.png" width=“50>
+
+
+## On clicking Book Now button ,  it will display a Checkout Screen
 <img src="https://github.com/intempt/ios-sdk/blob/custoEvent/screenshots/4.png" width=“50>
-
-
-## On clicking payment button , purchase custom event will be fired in this project 
-<img src="https://github.com/intempt/ios-sdk/blob/custoEvent/screenshots/5.png" width=“50>
