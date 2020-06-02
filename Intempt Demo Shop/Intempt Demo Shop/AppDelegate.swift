@@ -8,10 +8,9 @@
 
 import UIKit
 import FBSDKCoreKit
-
+import Stripe
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -20,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                   application,
                   didFinishLaunchingWithOptions: launchOptions
               )
+        Stripe.setDefaultPublishableKey("pk_test_ljAFYrnnGBQFZKlS3RfRsHXo00O5vWWmBk")
+
         return true
     }
     func application(

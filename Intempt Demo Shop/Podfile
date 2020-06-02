@@ -13,6 +13,5 @@ pod 'Kingfisher'
 
 pod 'FBSDKCoreKit'  
 pod 'FBSDKLoginKit'
-  pod 'FacebookLogin'
-
+pod 'SKActivityIndicatorView'
 end

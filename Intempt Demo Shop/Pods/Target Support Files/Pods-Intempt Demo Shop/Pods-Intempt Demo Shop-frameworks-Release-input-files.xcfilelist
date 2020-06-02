@@ -5,5 +5,6 @@ ${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework
 ${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework
 ${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
+${BUILT_PRODUCTS_DIR}/SKActivityIndicatorView/SKActivityIndicatorView.framework
 ${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework
 ${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework

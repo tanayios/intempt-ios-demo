@@ -20,7 +20,10 @@
 		ED3E85F12483D84A003A943C /* productListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E85F02483D84A003A943C /* productListCell.swift */; };
 		ED3E85F52483F6B5003A943C /* loading.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED3E85F42483F6B5003A943C /* loading.jpg */; };
 		ED3E85F724840716003A943C /* pricesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E85F624840716003A943C /* pricesData.swift */; };
+		ED5A87FB24868A000087EBF6 /* paymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A87FA24868A000087EBF6 /* paymentViewController.swift */; };
 		ED6848E6248592B400A58196 /* Unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = ED6848E5248592B400A58196 /* Unknown.png */; };
+		EDA21A202486C6CD005B8573 /* launchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA21A1F2486C6CD005B8573 /* launchViewController.swift */; };
+		EDA21A232486D814005B8573 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA21A222486D814005B8573 /* AppManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +44,10 @@
 		ED3E85F02483D84A003A943C /* productListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productListCell.swift; sourceTree = "<group>"; };
 		ED3E85F42483F6B5003A943C /* loading.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loading.jpg; sourceTree = "<group>"; };
 		ED3E85F624840716003A943C /* pricesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pricesData.swift; sourceTree = "<group>"; };
+		ED5A87FA24868A000087EBF6 /* paymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = paymentViewController.swift; sourceTree = "<group>"; };
 		ED6848E5248592B400A58196 /* Unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unknown.png; sourceTree = "<group>"; };
+		EDA21A1F2486C6CD005B8573 /* launchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = launchViewController.swift; sourceTree = "<group>"; };
+		EDA21A222486D814005B8573 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +108,8 @@
 				ED3E85ED2483BEE7003A943C /* Services */,
 				ED3E85EC2483BEB2003A943C /* Controller */,
 				ED3E85E92483BD54003A943C /* Model */,
-				ED3E85DB2483BA2C003A943C /* Main.storyboard */,
 				ED3E85DE2483BA2E003A943C /* Assets.xcassets */,
+				EDA21A212486C6E4005B8573 /* View */,
 				ED3E85E02483BA2E003A943C /* LaunchScreen.storyboard */,
 				ED3E85E32483BA2E003A943C /* Info.plist */,
 			);
@@ -123,7 +129,9 @@
 			isa = PBXGroup;
 			children = (
 				ED3E85D92483BA2C003A943C /* ViewController.swift */,
+				EDA21A1F2486C6CD005B8573 /* launchViewController.swift */,
 				ED3E85F02483D84A003A943C /* productListCell.swift */,
+				ED5A87FA24868A000087EBF6 /* paymentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -131,9 +139,18 @@
 		ED3E85ED2483BEE7003A943C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EDA21A222486D814005B8573 /* AppManager.swift */,
 				ED3E85EE2483BEF5003A943C /* Webservice.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		EDA21A212486C6E4005B8573 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E85DB2483BA2C003A943C /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +271,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDA21A202486C6CD005B8573 /* launchViewController.swift in Sources */,
+				EDA21A232486D814005B8573 /* AppManager.swift in Sources */,
 				ED3E85DA2483BA2C003A943C /* ViewController.swift in Sources */,
 				ED3E85EB2483BD88003A943C /* productList.swift in Sources */,
 				ED3E85D62483BA2C003A943C /* AppDelegate.swift in Sources */,
@@ -261,6 +280,7 @@
 				ED3E85D82483BA2C003A943C /* SceneDelegate.swift in Sources */,
 				ED3E85F12483D84A003A943C /* productListCell.swift in Sources */,
 				ED3E85F724840716003A943C /* pricesData.swift in Sources */,
+				ED5A87FB24868A000087EBF6 /* paymentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,7 +434,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tanay.app.Intempt-Demo-Shop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -432,7 +452,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tanay.app.Intempt-Demo-Shop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

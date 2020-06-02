@@ -10,7 +10,8 @@ import UIKit
 import StoreKit
 import Stripe
 import Alamofire
-class PopUpViewController: UIViewController,STPPaymentCardTextFieldDelegate {
+import SKActivityIndicatorView
+class paymentViewController: UIViewController,STPPaymentCardTextFieldDelegate {
     @IBOutlet var popup_view: UIView!
     @IBOutlet var stripeView: UIView!
     @IBOutlet var lblProductName : UILabel!
@@ -23,23 +24,49 @@ class PopUpViewController: UIViewController,STPPaymentCardTextFieldDelegate {
 
     func validCardCheckout()
     {
-        
-     
-        
-        
+    
         let stripeAuthHeader: HTTPHeaders = [
                   "Authorization": "Bearer sk_test_zjKhYcNvboNfRUCcrAaW7Pxs00wSbMTMGv"
-              ]
-        
-     
-        let params = ["card[number]": paymentTextField.cardNumber!,"card[exp_month]": paymentTextField.expirationMonth,"card[exp_year]": paymentTextField.expirationYear,"card[cvc]": paymentTextField.cvc!] as [String : Any]
-        AF.request(stripeTokenUrl, method: .post, parameters: params, encoding: URLEncoding.httpBody , headers: stripeAuthHeader ).responseJSON { (response) in
-  print(response)
             
-            self.payment()
-        
+              ]
+        if paymentTextField.cardNumber != nil  && paymentTextField.cvc != nil
+        {            let params = ["card[number]": paymentTextField.cardNumber!,"card[exp_month]": paymentTextField.expirationMonth,"card[exp_year]": paymentTextField.expirationYear,"card[cvc]": paymentTextField.cvc!] as [String : Any]
+            
+             AF.request(stripeTokenUrl, method: .post, parameters: params, encoding: URLEncoding.httpBody , headers: stripeAuthHeader ).responseJSON { (response) in
+                    switch response.result {
+                             case .failure(let error):
+                                 print(error)
+                     SKActivityIndicator.dismiss()
+
+                             case .success(let response):
+                                 print(response)
+                                    // let result = response.result
+                                                      
+                                     let json = response as! NSDictionary
+                     
+                         if         let data = json.value(forKey: "error")
+                         {
+                             SKActivityIndicator.dismiss()
+
+                             let error = data as! NSDictionary
+                             AppManager().AlertUser("", message: "\(error.value(forKey: "message") ?? "card_error")", vc: self)
+                     }
+                     else
+                         {
+                           
+                             self.payment()
+                     }
+                     
+
+             }
+             }
+             
         }
-        
+        else
+        {
+               SKActivityIndicator.dismiss()
+        }
+
         
         
     }
@@ -47,20 +74,28 @@ class PopUpViewController: UIViewController,STPPaymentCardTextFieldDelegate {
     func payment()
        {
            
-        
-           
-           
            let stripeAuthHeader: HTTPHeaders = [
                      "Authorization": "Bearer sk_test_zjKhYcNvboNfRUCcrAaW7Pxs00wSbMTMGv"
                  ]
-           
         
         let params = ["amount": strPrice,"currency":"eur","source": "tok_visa","description": "\(self.strName) Description : \(self.strDesc)"] as [String : Any]
            AF.request(stripeChargesUrl, method: .post, parameters: params, encoding: URLEncoding.httpBody , headers: stripeAuthHeader ).responseJSON { (response) in
-     print(response)
-           
-           }
-           
+            switch response.result {
+                     case .failure(let error):
+                         print(error)
+             SKActivityIndicator.dismiss()
+
+                     case .success(let response):
+                          SKActivityIndicator.dismiss()
+                             let alertController = UIAlertController(title: "", message: "Payment Sucessfull.", preferredStyle: .alert)
+                                    let action1 = UIAlertAction(title: "Ok", style: .default) { (action:UIAlertAction) in
+                                            self.removeAnimate()                                    }
+                             alertController.addAction(action1)
+                             self.present(alertController, animated: true, completion: {
+                             })
+     
+     }
+     }
            
            
        }
@@ -71,6 +106,10 @@ class PopUpViewController: UIViewController,STPPaymentCardTextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(productPriceData)
+        self.popup_view.layer.borderColor = UIColor.clear.cgColor
+        self.popup_view.layer.borderWidth = 5.0
+        self.popup_view.layer.cornerRadius = 5.0
+
  paymentTextField.postalCodeEntryEnabled = false
      paymentTextField.frame = CGRect(x: 15, y: 199, width: self.view.frame.size.width - 30, height: 44)
         paymentTextField.delegate = self
@@ -96,17 +135,9 @@ class PopUpViewController: UIViewController,STPPaymentCardTextFieldDelegate {
       
         
         self.view.backgroundColor = UIColor.white.withAlphaComponent(0.8)
-        
-        
+
      
         self.showAnimate()
-        
-        // Do any additional setup after loading the view.
-        
-        //popup_view.clipsToBounds=true
-       // popup_view.layer.cornerRadius=3/
-        
-     
         
     }
   
@@ -145,29 +176,22 @@ class PopUpViewController: UIViewController,STPPaymentCardTextFieldDelegate {
     
     
     @IBAction func Confirm(_ sender: Any) {
+        
+        SKActivityIndicator.spinnerStyle(.defaultSpinner)
+               SKActivityIndicator.show("", userInteractionStatus: true)
+
+               DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
         self.validCardCheckout()
-       let strCardnumber = "\(paymentTextField.cardNumber!)"
-        if paymentTextField.cardNumber == strCardnumber
-        {
-            print("hello")
-
         }
-        else
-        {
-            print("aaa")
-
-            
-        }
+      
     }
     
 
   
 }
-  
 
   extension UIViewController
   {
-    
     
     func hideKeyboard1()
     {
