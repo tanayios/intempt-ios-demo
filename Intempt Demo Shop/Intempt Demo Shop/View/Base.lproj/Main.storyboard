@@ -104,6 +104,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="addButton" destination="2yG-aF-lGO" id="vCG-EL-7Zl"/>
                                             <outlet property="img" destination="hM8-sa-QuV" id="RPz-5x-gXW"/>
                                             <outlet property="lblAddress" destination="RGv-V3-b7Q" id="gNs-yK-4m1"/>
                                             <outlet property="lblDescription" destination="idN-yy-jR5" id="Ttv-s9-7Ni"/>
@@ -123,6 +124,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Voe-Ac-8wz"/>
                     <connections>
+                        <outlet property="btnSignIn" destination="zZK-Z5-o3D" id="8pG-TU-Pfl"/>
                         <outlet property="imgView" destination="bVp-2J-31F" id="qen-kM-0ds"/>
                         <outlet property="profileName" destination="i6u-z6-uAL" id="7IN-PH-ril"/>
                         <outlet property="tblView" destination="0l1-SG-Lw0" id="Lhn-xb-qkO"/>
@@ -149,9 +151,91 @@
             </objects>
             <point key="canvasLocation" x="-177" y="36"/>
         </scene>
+        <!--Payment View Controller-->
+        <scene sceneID="5t2-XC-6J5">
+            <objects>
+                <viewController storyboardIdentifier="sbPopUpID" id="Dp6-5k-iw7" customClass="paymentViewController" customModule="Intempt_Demo_Shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DsZ-Xl-S6X"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cv6-4R-Ii9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a8A-N0-ShC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MKh-Cf-Ldm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="MAT-fz-G5K">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view autoresizesSubviews="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OrP-oR-m22">
+                                            <rect key="frame" x="20" y="141" width="334" height="336"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajf-Pd-sEX">
+                                                    <rect key="frame" x="282" y="19" width="40" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="close"/>
+                                                    <connections>
+                                                        <action selector="closePopUp:" destination="Dp6-5k-iw7" eventType="touchUpInside" id="hzL-yc-S76"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Room Double Bed" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wt8-in-8Dx">
+                                                    <rect key="frame" x="8" y="58" width="206" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" red="0.066666666669999999" green="0.094117647060000004" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Usd-L5-X0s">
+                                                    <rect key="frame" x="209" y="64" width="113" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" red="0.066666666669999999" green="0.094117647060000004" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubc-tQ-wFy">
+                                                    <rect key="frame" x="55" y="219" width="225" height="65"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <state key="normal" title="Payment" backgroundImage="stormGrey100"/>
+                                                    <connections>
+                                                        <action selector="Confirm:" destination="Dp6-5k-iw7" eventType="touchUpInside" id="2Kz-gy-UqT"/>
+                                                    </connections>
+                                                </button>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZh-yR-pGd">
+                                                    <rect key="frame" x="8" y="104" width="314" height="93"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="j9B-Ph-uUV"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblPrice" destination="Usd-L5-X0s" id="yWH-5g-Rfh"/>
+                        <outlet property="lblProductName" destination="Wt8-in-8Dx" id="Kxn-F2-m6F"/>
+                        <outlet property="stripeView" destination="pZh-yR-pGd" id="8oW-QM-Q1U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pCL-g2-X5Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4364" y="-287.40629685157421"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="close" width="16" height="16"/>
         <image name="loading.jpg" width="900" height="800"/>
         <image name="pin" width="128" height="128"/>
+        <image name="stormGrey100" width="200" height="48"/>
     </resources>
 </document>
