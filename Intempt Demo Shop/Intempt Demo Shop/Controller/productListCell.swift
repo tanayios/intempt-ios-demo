@@ -1,10 +1,3 @@
-//
-//  productListCell.swift
-//  Intempt Demo Shop
-//
-//  Created by Tanay Bhattacharjee on 31/05/20.
-//  Copyright © 2020 Tanay Bhattacharjee. All rights reserved.
-//
 
 import UIKit
 

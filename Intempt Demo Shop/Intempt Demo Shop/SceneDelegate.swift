@@ -1,22 +1,14 @@
-//
-//  SceneDelegate.swift
-//  Intempt Demo Shop
-//
-//  Created by Tanay Bhattacharjee on 31/05/20.
-//  Copyright © 2020 Tanay Bhattacharjee. All rights reserved.
-//
+
 
 import UIKit
+import intempt
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        Intempt.tracking(withOrgId: "ahmed", andSourceId: "102539216378789888", andToken: "mh7VM8DQGl3a9zZqlivaF6hWz5qoMpCi.ud5Nwsvor0FWrmMsFYHBssIfNZFNVEer1f09lMz5GjSawyO9JlSuRWWjBl-oReho")
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

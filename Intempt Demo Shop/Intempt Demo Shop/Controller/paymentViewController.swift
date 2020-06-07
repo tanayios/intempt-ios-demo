@@ -1,16 +1,11 @@
-  //
-//  PopUpViewController.swift
-//  PopUp
-//
-//  Created by Tanay Bhattacharjee on 6/06/2016.
-//  Copyright © 2016 Seemu. All rights reserved.
-//
+
 
 import UIKit
 import StoreKit
 import Stripe
 import Alamofire
-import SKActivityIndicatorView
+import intempt
+//import SKActivityIndicatorView
 class paymentViewController: UIViewController,STPPaymentCardTextFieldDelegate {
     @IBOutlet var popup_view: UIView!
     @IBOutlet var stripeView: UIView!
@@ -36,7 +31,7 @@ class paymentViewController: UIViewController,STPPaymentCardTextFieldDelegate {
                     switch response.result {
                              case .failure(let error):
                                  print(error)
-                     SKActivityIndicator.dismiss()
+                   //  SKActivityIndicator.dismiss()
 
                              case .success(let response):
                                  print(response)
@@ -46,7 +41,7 @@ class paymentViewController: UIViewController,STPPaymentCardTextFieldDelegate {
                      
                          if         let data = json.value(forKey: "error")
                          {
-                             SKActivityIndicator.dismiss()
+                           //  SKActivityIndicator.dismiss()
 
                              let error = data as! NSDictionary
                              AppManager().AlertUser("", message: "\(error.value(forKey: "message") ?? "card_error")", vc: self)
@@ -64,7 +59,7 @@ class paymentViewController: UIViewController,STPPaymentCardTextFieldDelegate {
         }
         else
         {
-               SKActivityIndicator.dismiss()
+            //   SKActivityIndicator.dismiss()
         }
 
         
@@ -83,13 +78,28 @@ class paymentViewController: UIViewController,STPPaymentCardTextFieldDelegate {
             switch response.result {
                      case .failure(let error):
                          print(error)
-             SKActivityIndicator.dismiss()
+          //   SKActivityIndicator.dismiss()
 
                      case .success(let response):
-                          SKActivityIndicator.dismiss()
+                        //  SKActivityIndicator.dismiss()
                              let alertController = UIAlertController(title: "", message: "Payment Sucessfull.", preferredStyle: .alert)
                                     let action1 = UIAlertAction(title: "Ok", style: .default) { (action:UIAlertAction) in
-                                            self.removeAnimate()                                    }
+                                            self.removeAnimate()
+                                      
+                                               let arrData = NSMutableArray()
+                                               let dic1 = NSMutableDictionary()
+                                        dic1.setValue(self.strName, forKey: "hotelRoomName");
+                                        dic1.setValue(self.strPrice, forKey: "roomPrice");
+                                        dic1.setValue(self.strDesc, forKey: "hotelDesc");
+                                              
+                                               arrData.add(dic1)
+                                            print(arrData)
+                                               ///customEvent ///
+                                               Intempt.track("hotel-booking", withProperties: arrData, error: nil)
+                                        
+                                        
+                                        
+                             }
                              alertController.addAction(action1)
                              self.present(alertController, animated: true, completion: {
                              })
@@ -177,8 +187,8 @@ class paymentViewController: UIViewController,STPPaymentCardTextFieldDelegate {
     
     @IBAction func Confirm(_ sender: Any) {
         
-        SKActivityIndicator.spinnerStyle(.defaultSpinner)
-               SKActivityIndicator.show("", userInteractionStatus: true)
+   //     SKActivityIndicator.spinnerStyle(.defaultSpinner)
+            //   SKActivityIndicator.show("", userInteractionStatus: true)
 
                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
         self.validCardCheckout()

@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  Intempt Demo Shop
-//
-//  Created by Tanay Bhattacharjee on 31/05/20.
-//  Copyright © 2020 Tanay Bhattacharjee. All rights reserved.
-//
 
 import UIKit
 import Alamofire
@@ -14,7 +7,8 @@ import Auth0
 import Combine
 import FBSDKCoreKit
 import Stripe
-import SKActivityIndicatorView
+import intempt
+//import SKActivityIndicatorView
 class ViewController: UIViewController {
      @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var profileName: UILabel!
@@ -66,8 +60,8 @@ class ViewController: UIViewController {
         }
     
         tblView.tableFooterView = UIView()
-        SKActivityIndicator.spinnerStyle(.defaultSpinner)
-        SKActivityIndicator.show("", userInteractionStatus: true)
+    //    SKActivityIndicator.spinnerStyle(.defaultSpinner)
+     //   SKActivityIndicator.show("", userInteractionStatus: true)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
 
@@ -99,7 +93,7 @@ class ViewController: UIViewController {
                 
             }catch let err{
                 print(err)
-                SKActivityIndicator.dismiss()
+              //  SKActivityIndicator.dismiss()
 
             }
             
@@ -125,12 +119,12 @@ class ViewController: UIViewController {
                 
                 print(self.productPriceData)
                 self.tblView.reloadData()
-                SKActivityIndicator.dismiss()
+              //  SKActivityIndicator.dismiss()
 
                 
             }catch let err{
                 print(err)
-                SKActivityIndicator.dismiss()
+              //  SKActivityIndicator.dismiss()
 
             }
             
@@ -221,6 +215,10 @@ extension ViewController
                                                         //  UIAlertController.show(message: "Logged in as \(profile["first_name"]!) \(profile["last_name"]!)")
                                                           
                                                           print("Logged in as \(profile["first_name"]!) \(profile["last_name"]!)")
+                                                        
+                                                        let strFullName = "\(profile["first_name"]!) \(profile["last_name"]!)"
+                                                        
+                                                        Intempt.identify(strFullName, withProperties: nil, error: nil)
                                                       }
                                                   case .failure(let error): print("kkk---\(error.localizedDescription)")
                                               }
