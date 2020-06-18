@@ -8,7 +8,14 @@ import Combine
 import FBSDKCoreKit
 import Stripe
 import intempt
-//import SKActivityIndicatorView
+struct NetworkState {
+
+    var isInternetAvailable:Bool
+    {
+        return NetworkReachabilityManager()!.isReachable
+    }
+}
+import SKActivityIndicatorView
 class ViewController: UIViewController {
      @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var profileName: UILabel!
@@ -60,14 +67,15 @@ class ViewController: UIViewController {
         }
     
         tblView.tableFooterView = UIView()
-    //    SKActivityIndicator.spinnerStyle(.defaultSpinner)
-     //   SKActivityIndicator.show("", userInteractionStatus: true)
+    SKActivityIndicator.spinnerStyle(.defaultSpinner)
+    SKActivityIndicator.show("", userInteractionStatus: true)
+        if (NetworkState().isInternetAvailable) {
+             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-
-            self.loadData()
-       }
-        
+                        self.loadData()
+                   }
+                            }
+       
         // Do any additional setup after loading the view.
     }
     
@@ -93,7 +101,7 @@ class ViewController: UIViewController {
                 
             }catch let err{
                 print(err)
-              //  SKActivityIndicator.dismiss()
+                SKActivityIndicator.dismiss()
 
             }
             
@@ -119,12 +127,12 @@ class ViewController: UIViewController {
                 
                 print(self.productPriceData)
                 self.tblView.reloadData()
-              //  SKActivityIndicator.dismiss()
+                SKActivityIndicator.dismiss()
 
                 
             }catch let err{
                 print(err)
-              //  SKActivityIndicator.dismiss()
+               SKActivityIndicator.dismiss()
 
             }
             
@@ -135,7 +143,14 @@ class ViewController: UIViewController {
       
         self.facebookLoginData()
     }
-
+    @IBAction func ratingApp(_ sender: UIButton) {
+       
+         let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "rating") as! ratingPopupViewController
+                                                             self.addChild(popOverVC)
+                                                        
+                                                             self.view.addSubview(popOverVC.view)
+                                                             popOverVC.didMove(toParent: self)
+     }
 }
 
 extension ViewController
@@ -271,7 +286,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource
                 let strPrice = "\(self.productPriceData[i].unit_amount)"
                 let price = Float(strPrice)
                 let priceDecimal = price! / 100
-                cell.lblPrice.text = "€ \(priceDecimal) per night"
+                cell.lblPrice.text = "$ \(priceDecimal) per night"
             }
                 
             else

@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C6ACD4E248CD6D7007CF96F /* intempt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6ACD4C248CD6C8007CF96F /* intempt.framework */; };
-		3C6ACD4F248CD6D7007CF96F /* intempt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6ACD4C248CD6C8007CF96F /* intempt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7E3D24248AC8770ECA710B24 /* Pods_Intempt_Demo_Shop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BAF760C6D665A00D93F0D7C /* Pods_Intempt_Demo_Shop.framework */; };
 		ED312239248464B5008AF128 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED312238248464B5008AF128 /* Auth0.plist */; };
+		ED31BAAA249BE44C00C054FC /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED31BAA9249BE44C00C054FC /* FloatRatingView.swift */; };
+		ED31BAAC249BE55A00C054FC /* ratingPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED31BAAB249BE55A00C054FC /* ratingPopupViewController.swift */; };
+		ED31BAAF249BED2600C054FC /* intempt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED31BAAD249BED1900C054FC /* intempt.framework */; };
+		ED31BAB0249BED2600C054FC /* intempt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED31BAAD249BED1900C054FC /* intempt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED3E85D62483BA2C003A943C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E85D52483BA2C003A943C /* AppDelegate.swift */; };
 		ED3E85D82483BA2C003A943C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E85D72483BA2C003A943C /* SceneDelegate.swift */; };
 		ED3E85DA2483BA2C003A943C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E85D92483BA2C003A943C /* ViewController.swift */; };
@@ -22,6 +24,7 @@
 		ED3E85F12483D84A003A943C /* productListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E85F02483D84A003A943C /* productListCell.swift */; };
 		ED3E85F52483F6B5003A943C /* loading.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED3E85F42483F6B5003A943C /* loading.jpg */; };
 		ED3E85F724840716003A943C /* pricesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E85F624840716003A943C /* pricesData.swift */; };
+		ED49F0FC249B75720076D8DA /* spa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED49F0FB249B75720076D8DA /* spa.jpg */; };
 		ED5A87FB24868A000087EBF6 /* paymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A87FA24868A000087EBF6 /* paymentViewController.swift */; };
 		ED6848E6248592B400A58196 /* Unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = ED6848E5248592B400A58196 /* Unknown.png */; };
 		EDA21A202486C6CD005B8573 /* launchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA21A1F2486C6CD005B8573 /* launchViewController.swift */; };
@@ -35,7 +38,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3C6ACD4F248CD6D7007CF96F /* intempt.framework in Embed Frameworks */,
+				ED31BAB0249BED2600C054FC /* intempt.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,10 +47,12 @@
 
 /* Begin PBXFileReference section */
 		3BAF760C6D665A00D93F0D7C /* Pods_Intempt_Demo_Shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Intempt_Demo_Shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C6ACD4C248CD6C8007CF96F /* intempt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = intempt.framework; sourceTree = "<group>"; };
 		9263D5505B2EF1F6491703FA /* Pods-Intempt Demo Shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intempt Demo Shop.debug.xcconfig"; path = "Target Support Files/Pods-Intempt Demo Shop/Pods-Intempt Demo Shop.debug.xcconfig"; sourceTree = "<group>"; };
 		B8AA5D3FC658C6AA58D18CF8 /* Pods-Intempt Demo Shop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intempt Demo Shop.release.xcconfig"; path = "Target Support Files/Pods-Intempt Demo Shop/Pods-Intempt Demo Shop.release.xcconfig"; sourceTree = "<group>"; };
 		ED312238248464B5008AF128 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		ED31BAA9249BE44C00C054FC /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
+		ED31BAAB249BE55A00C054FC /* ratingPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ratingPopupViewController.swift; sourceTree = "<group>"; };
+		ED31BAAD249BED1900C054FC /* intempt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = intempt.framework; sourceTree = "<group>"; };
 		ED3E85D22483BA2C003A943C /* Intempt Demo Shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Intempt Demo Shop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3E85D52483BA2C003A943C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED3E85D72483BA2C003A943C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 		ED3E85F02483D84A003A943C /* productListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productListCell.swift; sourceTree = "<group>"; };
 		ED3E85F42483F6B5003A943C /* loading.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loading.jpg; sourceTree = "<group>"; };
 		ED3E85F624840716003A943C /* pricesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pricesData.swift; sourceTree = "<group>"; };
+		ED49F0FB249B75720076D8DA /* spa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spa.jpg; sourceTree = "<group>"; };
 		ED5A87FA24868A000087EBF6 /* paymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = paymentViewController.swift; sourceTree = "<group>"; };
 		ED6848E5248592B400A58196 /* Unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unknown.png; sourceTree = "<group>"; };
 		EDA21A1F2486C6CD005B8573 /* launchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = launchViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C6ACD4E248CD6D7007CF96F /* intempt.framework in Frameworks */,
+				ED31BAAF249BED2600C054FC /* intempt.framework in Frameworks */,
 				7E3D24248AC8770ECA710B24 /* Pods_Intempt_Demo_Shop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,8 +124,10 @@
 		ED3E85D42483BA2C003A943C /* Intempt Demo Shop */ = {
 			isa = PBXGroup;
 			children = (
-				3C6ACD4C248CD6C8007CF96F /* intempt.framework */,
+				ED31BAAD249BED1900C054FC /* intempt.framework */,
+				ED31BAA9249BE44C00C054FC /* FloatRatingView.swift */,
 				ED3E85F42483F6B5003A943C /* loading.jpg */,
+				ED49F0FB249B75720076D8DA /* spa.jpg */,
 				ED6848E5248592B400A58196 /* Unknown.png */,
 				ED312238248464B5008AF128 /* Auth0.plist */,
 				ED3E85D52483BA2C003A943C /* AppDelegate.swift */,
@@ -148,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				ED3E85D92483BA2C003A943C /* ViewController.swift */,
+				ED31BAAB249BE55A00C054FC /* ratingPopupViewController.swift */,
 				EDA21A1F2486C6CD005B8573 /* launchViewController.swift */,
 				ED3E85F02483D84A003A943C /* productListCell.swift */,
 				ED5A87FA24868A000087EBF6 /* paymentViewController.swift */,
@@ -237,6 +246,7 @@
 				ED3E85F52483F6B5003A943C /* loading.jpg in Resources */,
 				ED6848E6248592B400A58196 /* Unknown.png in Resources */,
 				ED3E85E22483BA2E003A943C /* LaunchScreen.storyboard in Resources */,
+				ED49F0FC249B75720076D8DA /* spa.jpg in Resources */,
 				ED3E85DF2483BA2E003A943C /* Assets.xcassets in Resources */,
 				ED3E85DD2483BA2C003A943C /* Main.storyboard in Resources */,
 			);
@@ -297,7 +307,9 @@
 				ED3E85EB2483BD88003A943C /* productList.swift in Sources */,
 				ED3E85D62483BA2C003A943C /* AppDelegate.swift in Sources */,
 				ED3E85EF2483BEF5003A943C /* Webservice.swift in Sources */,
+				ED31BAAC249BE55A00C054FC /* ratingPopupViewController.swift in Sources */,
 				ED3E85D82483BA2C003A943C /* SceneDelegate.swift in Sources */,
+				ED31BAAA249BE44C00C054FC /* FloatRatingView.swift in Sources */,
 				ED3E85F12483D84A003A943C /* productListCell.swift in Sources */,
 				ED3E85F724840716003A943C /* pricesData.swift in Sources */,
 				ED5A87FB24868A000087EBF6 /* paymentViewController.swift in Sources */,
@@ -450,6 +462,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Intempt\\ Demo\\ Shop",
 					"$(PROJECT_DIR)/Intempt\\ Demo\\ Shop",
+					"$(PROJECT_DIR)/Intempt\\ Demo\\ Shop",
+					"$(PROJECT_DIR)/Intempt\\ Demo\\ Shop",
 				);
 				INFOPLIST_FILE = "Intempt Demo Shop/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -471,6 +485,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Intempt\\ Demo\\ Shop",
+					"$(PROJECT_DIR)/Intempt\\ Demo\\ Shop",
 					"$(PROJECT_DIR)/Intempt\\ Demo\\ Shop",
 					"$(PROJECT_DIR)/Intempt\\ Demo\\ Shop",
 				);

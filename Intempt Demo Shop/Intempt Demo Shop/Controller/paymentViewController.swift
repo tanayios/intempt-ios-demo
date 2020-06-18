@@ -11,8 +11,9 @@ class paymentViewController: UIViewController,STPPaymentCardTextFieldDelegate {
     @IBOutlet var stripeView: UIView!
     @IBOutlet var lblProductName : UILabel!
     @IBOutlet var lblPrice : UILabel!
-
+    @IBOutlet var btnPayment : UIButton!
     var strName = "",strDesc = "",strPrice = "",strPrice1 = ""
+    var strSpaInterest = false
     let stripeTokenUrl = "https://api.stripe.com/v1/tokens"
     let stripeChargesUrl = "https://api.stripe.com/v1/charges"
 
@@ -31,7 +32,7 @@ class paymentViewController: UIViewController,STPPaymentCardTextFieldDelegate {
                     switch response.result {
                              case .failure(let error):
                                  print(error)
-                   //  SKActivityIndicator.dismiss()
+                 //    SKActivityIndicator.dismiss()
 
                              case .success(let response):
                                  print(response)
@@ -59,13 +60,44 @@ class paymentViewController: UIViewController,STPPaymentCardTextFieldDelegate {
         }
         else
         {
-            //   SKActivityIndicator.dismiss()
+           //   SKActivityIndicator.dismiss()
         }
 
         
         
     }
-    
+    var strSpaPrice : String = "00.00"
+    @IBAction func checkBoxTapped(_ sender: UIButton) {
+          let hotelPrice = Float(self.strPrice)
+                    
+                        let decimalhotelPrice = hotelPrice!/100
+          UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveLinear, animations: {
+              sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+          }) { (success) in
+           if sender.isSelected {
+                        sender.isSelected = false
+            self.strSpaInterest = false
+              self.strSpaPrice = "00.00"
+            self.btnPayment.setTitle("BOOK FOR $\(decimalhotelPrice)", for: .normal)
+                     } else {
+                         sender.isSelected  = true
+                    
+          
+                    self.strSpaInterest = true
+
+            
+            self.btnPayment.setTitle("BOOK FOR $\(decimalhotelPrice) + $ 30.0", for: .normal)
+             self.strSpaPrice = "3000"
+                     }
+            
+            
+              UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
+                  sender.transform = .identity
+               
+
+              }, completion: nil)
+          }
+      }
     func payment()
        {
            
@@ -73,12 +105,26 @@ class paymentViewController: UIViewController,STPPaymentCardTextFieldDelegate {
                      "Authorization": "Bearer sk_test_zjKhYcNvboNfRUCcrAaW7Pxs00wSbMTMGv"
                  ]
         
-        let params = ["amount": strPrice,"currency":"eur","source": "tok_visa","description": "\(self.strName) Description : \(self.strDesc)"] as [String : Any]
+            let hotelPrice = Float(strPrice)
+
+        var amountPrice : Float
+        if self.strSpaPrice == "00.00"
+        {
+            amountPrice = hotelPrice!
+        }
+        else
+        {
+            let  hotelSpaPrice = Float(strSpaPrice)
+           
+         amountPrice = hotelPrice! + hotelSpaPrice!
+        }
+        
+        let params = ["amount": amountPrice,"currency":"eur","source": "tok_visa","description": "\(self.strName) Description : \(self.strDesc)"] as [String : Any]
            AF.request(stripeChargesUrl, method: .post, parameters: params, encoding: URLEncoding.httpBody , headers: stripeAuthHeader ).responseJSON { (response) in
             switch response.result {
                      case .failure(let error):
                          print(error)
-          //   SKActivityIndicator.dismiss()
+           //  SKActivityIndicator.dismiss()
 
                      case .success(let response):
                         //  SKActivityIndicator.dismiss()
@@ -89,13 +135,18 @@ class paymentViewController: UIViewController,STPPaymentCardTextFieldDelegate {
                                                let arrData = NSMutableArray()
                                                let dic1 = NSMutableDictionary()
                                         dic1.setValue(self.strName, forKey: "hotelRoomName");
-                                        dic1.setValue(self.strPrice, forKey: "roomPrice");
-                                        dic1.setValue(self.strDesc, forKey: "hotelDesc");
+                                        dic1.setValue(self.strPrice, forKey: "amount");
+                                        dic1.setValue(self.strDesc, forKey: "hotelRoomDesc");
+                                        dic1.setValue("30000", forKey: "spaPrice");
+                                        dic1.setValue(self.strSpaInterest, forKey: "spaInterest");
+                                    
+                                        dic1.setValue(true, forKey: "successfulTransaction");
+
                                               
                                                arrData.add(dic1)
                                             print(arrData)
                                                ///customEvent ///
-                                               Intempt.track("hotel-booking", withProperties: arrData, error: nil)
+                                               Intempt.track("hotel-booking-app", withProperties: arrData, error: nil)
                                         
                                         
                                         
@@ -139,7 +190,8 @@ class paymentViewController: UIViewController,STPPaymentCardTextFieldDelegate {
         self.lblProductName.text = self.strName
         self.lblPrice.text = strPrice1
         
-        
+    self.btnPayment.setTitle("BOOK FOR \(self.lblPrice.text!)", for: .normal)
+
         
      self.hideKeyboard1()
       
@@ -193,11 +245,10 @@ class paymentViewController: UIViewController,STPPaymentCardTextFieldDelegate {
                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
         self.validCardCheckout()
         }
-      
-    }
-    
 
-  
+    }
+
+
 }
 
   extension UIViewController
