@@ -8,6 +8,8 @@ import Combine
 import FBSDKCoreKit
 import Stripe
 import intempt
+import UserNotifications
+
 struct NetworkState {
 
     var isInternetAvailable:Bool
@@ -16,7 +18,7 @@ struct NetworkState {
     }
 }
 import SKActivityIndicatorView
-class ViewController: UIViewController {
+class ViewController: UIViewController,UNUserNotificationCenterDelegate {
      @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var tblView: UITableView!
@@ -37,7 +39,15 @@ class ViewController: UIViewController {
        }
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let token = AccessToken.current,
+        //Put Intempt Provide UDID
+        IntemptClient.shared()?.uuidString("2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6");
+        IntemptClient.shared()?.delegate = self
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { granted, error in
+            print("Permission granted? \(granted)")
+        }
+        UNUserNotificationCenter.current().delegate = self
+                if let token = AccessToken.current,
               !token.isExpired {
               // User is logged in, do work such as go to next view controller.
             btnSignIn.setTitle("Sign Out", for: .normal)
@@ -78,7 +88,22 @@ class ViewController: UIViewController {
        
         // Do any additional setup after loading the view.
     }
+    func postNotification(body:String) {
+        let content = UNMutableNotificationContent()
+    content.title = "Welcome to \(self.profileName.text!)"
+        content.body = body
+    content.sound = UNNotificationSound.default
+        let request = UNNotificationRequest(identifier: "EntryNotification", content: content, trigger: nil)
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+    }
     
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
+    }
     func loadData()
     {
         let stripeAuthHeader: HTTPHeaders = [
@@ -444,3 +469,18 @@ extension ViewController: LoginButtonDelegate {
 
 }
 
+extension ViewController:intemptDelegate
+{
+    func didEnterRegion(_ entryTime: String!) {
+        
+        self.postNotification(body: "Enjoy your stay!")
+    }
+    
+    func didExitRegion(_ exitTime: String!) {
+        self.postNotification(body: "Exit Room!")
+
+    }
+    
+    
+    
+}
