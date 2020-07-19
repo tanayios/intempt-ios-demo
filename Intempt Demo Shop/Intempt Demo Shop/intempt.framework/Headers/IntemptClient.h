@@ -1,10 +1,11 @@
 @import Foundation;
 @import CoreLocation;
+@import CoreBluetooth;
 @protocol intemptDelegate <NSObject>
 -(void)didEnterRegion:(NSString*)entryTime;
 -(void)didExitRegion:(NSString*)exitTime;
 @end
-@interface IntemptClient : NSObject <CLLocationManagerDelegate>
+@interface IntemptClient : NSObject <CLLocationManagerDelegate,CBCentralManagerDelegate, CBPeripheralDelegate>
 {
     NSString * visitorId,*CfbundleIdentifier,*parentId, *eventId;
     double latitude;
@@ -27,6 +28,9 @@
 @property (nonatomic, strong) CLLocation *currentLocation;
 
 @property (nonatomic, strong) NSString *baseUrl;
+@property (strong, nonatomic) CBCentralManager *centralManager;
+@property (strong, nonatomic) CBPeripheral *discoveredPeripheral;
+@property (strong, nonatomic) NSMutableData *data;
 
 + (IntemptClient *)sharedClientWithOrganizationId:(NSString *)organizationId andTrackerId:(NSString *)trackerId andToken:(NSString *)token;
 

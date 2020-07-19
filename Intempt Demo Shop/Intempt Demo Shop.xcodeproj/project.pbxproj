@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7E3D24248AC8770ECA710B24 /* Pods_Intempt_Demo_Shop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BAF760C6D665A00D93F0D7C /* Pods_Intempt_Demo_Shop.framework */; };
+		ED28B19D24C441D5001E9930 /* intempt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED28B19B24C441CC001E9930 /* intempt.framework */; };
+		ED28B19E24C441D5001E9930 /* intempt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED28B19B24C441CC001E9930 /* intempt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED312239248464B5008AF128 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED312238248464B5008AF128 /* Auth0.plist */; };
 		ED31BAAA249BE44C00C054FC /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED31BAA9249BE44C00C054FC /* FloatRatingView.swift */; };
 		ED31BAAC249BE55A00C054FC /* ratingPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED31BAAB249BE55A00C054FC /* ratingPopupViewController.swift */; };
-		ED31BAAF249BED2600C054FC /* intempt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED31BAAD249BED1900C054FC /* intempt.framework */; };
-		ED31BAB0249BED2600C054FC /* intempt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED31BAAD249BED1900C054FC /* intempt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED3E85D62483BA2C003A943C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E85D52483BA2C003A943C /* AppDelegate.swift */; };
 		ED3E85D82483BA2C003A943C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E85D72483BA2C003A943C /* SceneDelegate.swift */; };
 		ED3E85DA2483BA2C003A943C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E85D92483BA2C003A943C /* ViewController.swift */; };
@@ -38,7 +38,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				ED31BAB0249BED2600C054FC /* intempt.framework in Embed Frameworks */,
+				ED28B19E24C441D5001E9930 /* intempt.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,10 +49,10 @@
 		3BAF760C6D665A00D93F0D7C /* Pods_Intempt_Demo_Shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Intempt_Demo_Shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9263D5505B2EF1F6491703FA /* Pods-Intempt Demo Shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intempt Demo Shop.debug.xcconfig"; path = "Target Support Files/Pods-Intempt Demo Shop/Pods-Intempt Demo Shop.debug.xcconfig"; sourceTree = "<group>"; };
 		B8AA5D3FC658C6AA58D18CF8 /* Pods-Intempt Demo Shop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intempt Demo Shop.release.xcconfig"; path = "Target Support Files/Pods-Intempt Demo Shop/Pods-Intempt Demo Shop.release.xcconfig"; sourceTree = "<group>"; };
+		ED28B19B24C441CC001E9930 /* intempt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = intempt.framework; sourceTree = "<group>"; };
 		ED312238248464B5008AF128 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		ED31BAA9249BE44C00C054FC /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
 		ED31BAAB249BE55A00C054FC /* ratingPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ratingPopupViewController.swift; sourceTree = "<group>"; };
-		ED31BAAD249BED1900C054FC /* intempt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = intempt.framework; sourceTree = "<group>"; };
 		ED3E85D22483BA2C003A943C /* Intempt Demo Shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Intempt Demo Shop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3E85D52483BA2C003A943C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED3E85D72483BA2C003A943C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED31BAAF249BED2600C054FC /* intempt.framework in Frameworks */,
+				ED28B19D24C441D5001E9930 /* intempt.framework in Frameworks */,
 				7E3D24248AC8770ECA710B24 /* Pods_Intempt_Demo_Shop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,7 +124,7 @@
 		ED3E85D42483BA2C003A943C /* Intempt Demo Shop */ = {
 			isa = PBXGroup;
 			children = (
-				ED31BAAD249BED1900C054FC /* intempt.framework */,
+				ED28B19B24C441CC001E9930 /* intempt.framework */,
 				ED31BAA9249BE44C00C054FC /* FloatRatingView.swift */,
 				ED3E85F42483F6B5003A943C /* loading.jpg */,
 				ED49F0FB249B75720076D8DA /* spa.jpg */,
@@ -457,9 +457,13 @@
 			baseConfigurationReference = 9263D5505B2EF1F6491703FA /* Pods-Intempt Demo Shop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 744DL23K9S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Intempt\\ Demo\\ Shop",
+					"$(PROJECT_DIR)/Intempt\\ Demo\\ Shop",
 					"$(PROJECT_DIR)/Intempt\\ Demo\\ Shop",
 					"$(PROJECT_DIR)/Intempt\\ Demo\\ Shop",
 					"$(PROJECT_DIR)/Intempt\\ Demo\\ Shop",
@@ -470,8 +474,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tanay.app.Intempt-Demo-Shop";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tanay.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -482,9 +487,13 @@
 			baseConfigurationReference = B8AA5D3FC658C6AA58D18CF8 /* Pods-Intempt Demo Shop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 744DL23K9S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Intempt\\ Demo\\ Shop",
+					"$(PROJECT_DIR)/Intempt\\ Demo\\ Shop",
 					"$(PROJECT_DIR)/Intempt\\ Demo\\ Shop",
 					"$(PROJECT_DIR)/Intempt\\ Demo\\ Shop",
 					"$(PROJECT_DIR)/Intempt\\ Demo\\ Shop",
@@ -495,8 +504,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tanay.app.Intempt-Demo-Shop";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tanay.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
