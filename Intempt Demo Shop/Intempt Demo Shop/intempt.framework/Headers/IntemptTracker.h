@@ -11,7 +11,7 @@
 + (void)identify:(NSString*)identity withProperties:(NSDictionary*)userProperties error:(NSError**)error;
 + (BOOL)addEvent:(NSDictionary*)event toEventCollection:(NSString*)eventCollection error:(NSError**)error;
 + (void)track:(NSString*)collectionName withProperties:(NSMutableArray*)userProperties error:(NSError**)error;
-+ (void)beaconUUIDString:(NSString*)uuid;
++ (void)beaconUUIDString:(NSString*)orgId andSourceId:(NSString*)trackerId andToken:(NSString*)token uuuid:(NSString*)uuid;
 @end
 
 #endif

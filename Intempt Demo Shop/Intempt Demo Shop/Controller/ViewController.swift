@@ -40,7 +40,7 @@ class ViewController: UIViewController,UNUserNotificationCenterDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Put Intempt Provide UDID
-        IntemptClient.shared()?.uuidString("2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6");
+        //IntemptClient.shared()?.uuidString("2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6");
         IntemptClient.shared()?.delegate = self
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { granted, error in
@@ -471,15 +471,15 @@ extension ViewController: LoginButtonDelegate {
 
 extension ViewController:intemptDelegate
 {
-    func didEnterRegion(_ entryTime: String!) {
+    func didEnterRegion(_ beaconData: CLBeacon!) {
         
-        self.postNotification(body: "Enjoy your stay!")
     }
     
-    func didExitRegion(_ exitTime: String!) {
-        self.postNotification(body: "Exit Room!")
-
+    func didExitRegion(_ beaconData: CLBeacon!) {
+        
     }
+    
+   
     
     
     

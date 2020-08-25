@@ -2,11 +2,12 @@
 @import CoreLocation;
 @import CoreBluetooth;
 @protocol intemptDelegate <NSObject>
--(void)didEnterRegion:(NSString*)entryTime;
--(void)didExitRegion:(NSString*)exitTime;
+-(void)didEnterRegion:(CLBeacon*)beaconData;
+-(void)didExitRegion:(CLBeacon*)beaconData;
 @end
 @interface IntemptClient : NSObject <CLLocationManagerDelegate,CBCentralManagerDelegate, CBPeripheralDelegate>
 {
+    int exitFlag;
     NSString * visitorId,*CfbundleIdentifier,*parentId, *eventId;
     double latitude;
     double longitude;
@@ -18,19 +19,22 @@
     CLGeocoder *geocoder;
     CLPlacemark *placemark;
     int count;
+    NSString * major,*proximityVisitorId,*sstrMajor;
 }
+@property NSInteger currentState;
+@property (strong, nonatomic) NSMutableArray *majorArrayData;
+@property (strong, nonatomic) NSMutableArray *filterBuffer;
+@property (strong, nonatomic) NSMutableArray *entryArray;
+@property (strong, nonatomic) NSMutableArray *exitArray;
 @property (nonatomic,weak) id<intemptDelegate> delegate;
-
-
 @property (nonatomic, strong) NSDictionary *propertiesOverridesDictionary;
-
-
 @property (nonatomic, strong) CLLocation *currentLocation;
-
 @property (nonatomic, strong) NSString *baseUrl;
 @property (strong, nonatomic) CBCentralManager *centralManager;
 @property (strong, nonatomic) CBPeripheral *discoveredPeripheral;
 @property (strong, nonatomic) NSMutableData *data;
+@property (nonatomic, strong) NSString *orgId;
+@property (nonatomic, strong) NSString *trackerId;
 
 + (IntemptClient *)sharedClientWithOrganizationId:(NSString *)organizationId andTrackerId:(NSString *)trackerId andToken:(NSString *)token;
 
@@ -117,8 +121,8 @@
 
 - (void)refreshCurrentLocation;
 - (void)track:(NSString*) collectionName withProperties: (NSMutableArray *) userProperties error:(NSError **) error;
-- (void)uuidString:(NSString*)uuid;
-
+- (void)withOrgId:(NSString*)orgId andSourceId:(NSString*)trackerId andToken:(NSString*)token uuidString:(NSString*)uuid;
+-(NSString *)getVisitorId ;
 
 /**
  Returns the Intempt SDK Version

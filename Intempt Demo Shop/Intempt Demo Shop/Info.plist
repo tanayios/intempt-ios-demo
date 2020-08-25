@@ -21,16 +21,16 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb654414375113373</string>
+				<string>fb661846557750557</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>FacebookAppID</key>
-	<string>654414375113373</string>
+	<string>661846557750557</string>
 	<key>FacebookDisplayName</key>
-	<string>Intempt Demo App</string>
+	<string>Intempt Technologies</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
