@@ -1,0 +1,286 @@
+{
+  "object": "list",
+  "data": [
+      {
+        "id": "prod_HLlzXHZZ55nTZ4",
+        "object": "product",
+        "active": true,
+        "attributes": [
+
+        ],
+        "created": 1590505935,
+        "description": "Spacious • Classic • City View",
+        "images": [
+          "https://files.stripe.com/links/fl_test_T0rYuOnZOO0mFeuB6WgFSHEL"
+        ],
+        "livemode": false,
+        "metadata": {
+          "address": "6 Rose Ln, Atkinson, NH, 03811",
+          "type": "Business"
+        },
+        "name": "Room - Double Bed Room",
+        "statement_descriptor": null,
+        "type": "service",
+        "unit_label": null,
+        "updated": 1597657230
+      },
+      {
+        "id": "prod_HLlyQsk5UgNKRe",
+        "object": "product",
+        "active": true,
+        "attributes": [
+
+        ],
+        "created": 1590505862,
+        "description": "Luxurious • Indoor Pool • Seaside View",
+        "images": [
+          "https://files.stripe.com/links/fl_test_ZFcOYDAFkszSJNOVCoQZO74d"
+        ],
+        "livemode": false,
+        "metadata": {
+          "address": "1510 Presley Dr, Cassville, MO, 65625",
+          "type": "Business"
+        },
+        "name": "City View Bedroom",
+        "statement_descriptor": null,
+        "type": "service",
+        "unit_label": null,
+        "updated": 1597657158
+      },
+      {
+        "id": "prod_HoGuYAabDu6nAv",
+        "object": "product",
+        "active": true,
+        "attributes": [
+
+        ],
+        "created": 1597078867,
+        "description": "Fan • Hairdryer • Shower",
+        "images": [
+          "https://files.stripe.com/links/fl_test_BrY8g0uxDDn4T7nz5FRoJqIb"
+        ],
+        "livemode": false,
+        "metadata": {
+          "address": "1351 Orange Avenue, Coronado, CA 92118",
+          "type": "Business"
+        },
+        "name": "Standard Room - Second Floor",
+        "statement_descriptor": null,
+        "type": "service",
+        "unit_label": null,
+        "updated": 1598114885
+      },
+      {
+        "id": "prod_HoGry4kZD5jTfH",
+        "object": "product",
+        "active": true,
+        "attributes": [
+
+        ],
+        "created": 1597078662,
+        "description": "TV • Desk • Microwave",
+        "images": [
+          "https://files.stripe.com/links/fl_test_FRuIlZOkYNOUmk28gvSRp0qN"
+        ],
+        "livemode": false,
+        "metadata": {
+          "address": " 520 E Street, Downtown, CA 92101",
+          "type": "Business"
+        },
+        "name": "Standard Room",
+        "statement_descriptor": null,
+        "type": "service",
+        "unit_label": null,
+        "updated": 1597657259
+      },
+    {
+      "id": "prod_HoGuYAabDu6nAv",
+      "object": "product",
+      "active": true,
+      "attributes": [
+
+      ],
+      "created": 1597078867,
+      "description": "Fan • Hairdryer • Shower",
+      "images": [
+        "https://files.stripe.com/links/fl_test_BrY8g0uxDDn4T7nz5FRoJqIb"
+      ],
+      "livemode": false,
+      "metadata": {
+        "address": "1351 Orange Avenue, Coronado, CA 92118",
+        "type": "Business"
+      },
+      "name": "Standard Room - Second Floor",
+      "statement_descriptor": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1598114885
+    },
+    {
+      "id": "prod_HoGry4kZD5jTfH",
+      "object": "product",
+      "active": true,
+      "attributes": [
+
+      ],
+      "created": 1597078662,
+      "description": "TV • Desk • Microwave",
+      "images": [
+        "https://files.stripe.com/links/fl_test_FRuIlZOkYNOUmk28gvSRp0qN"
+      ],
+      "livemode": false,
+      "metadata": {
+        "address": " 520 E Street, Downtown, CA 92101",
+        "type": "Business"
+      },
+      "name": "Standard Room",
+      "statement_descriptor": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1597657259
+    },
+    {
+      "id": "prod_HoGPEyBcA2mHT0",
+      "object": "product",
+      "active": false,
+      "attributes": [
+
+      ],
+      "created": 1597076978,
+      "description": "Private bathroom • Refrigerator • Coffee",
+      "images": [
+        "https://files.stripe.com/links/fl_test_XxR9cuLYp6K6rOkV2YA4BZor"
+      ],
+      "livemode": false,
+      "metadata": {
+        "address": " 207 5th Avenue, Downtown, CA 92101",
+        "type": "Business"
+      },
+      "name": "King Room Ocean Front",
+      "statement_descriptor": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1597657223
+    },
+    {
+      "id": "prod_HoGVhyGjmMtNrm",
+      "object": "product",
+      "active": true,
+      "attributes": [
+
+      ],
+      "created": 1597077337,
+      "description": "Parking • Flat-screen TV • Air conditioning",
+      "images": [
+        "https://files.stripe.com/links/fl_test_MsIVX4Ed6VS1uy3SWB2BDlLz"
+      ],
+      "livemode": false,
+      "metadata": {
+        "address": " 435 Sixth Avenue, Downtown, CA 92101",
+        "type": "Family"
+      },
+      "name": "Studio Suite Resort View",
+      "statement_descriptor": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1597657132
+    },
+    {
+      "id": "prod_HoGMVIJwYlP1XR",
+      "object": "product",
+      "active": false,
+      "attributes": [
+
+      ],
+      "created": 1597076817,
+      "description": "Balcony • Sea view • Air conditioning",
+      "images": [
+        "https://files.stripe.com/links/fl_test_RQzCTDZ5dIZhW2zlMqpDDQX2"
+      ],
+      "livemode": false,
+      "metadata": {
+        "address": "641 Camino Del Rio South, Valley, CA 92108",
+        "type": "Family"
+      },
+      "name": "Deluxe Room with Queen Beds",
+      "statement_descriptor": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1597657140
+    },
+    
+    {
+         "id": "prod_HoGJmsD9nK5dWQ",
+         "object": "product",
+         "active": true,
+         "attributes": [
+
+         ],
+         "created": 1597076602,
+         "description": "Private bathroom • Bidet • Bathrobe",
+         "images": [
+           "https://files.stripe.com/links/fl_test_WxX0G5nGyo8YUyqpQ5nM5auN"
+         ],
+         "livemode": false,
+         "metadata": {
+           "address": "1404 Vacation Road, Mission Bay, CA 92109",
+           "type": "Family"
+         },
+         "name": "Connecting Double Room",
+         "statement_descriptor": null,
+         "type": "service",
+         "unit_label": null,
+         "updated": 1597657142
+       },
+    {
+      "id": "prod_HoG93DT2WjWIPf",
+      "object": "product",
+      "active": false,
+      "attributes": [
+
+      ],
+      "created": 1597076025,
+      "description": "Air conditioning • Tile/marble floor • Balcony",
+      "images": [
+        "https://files.stripe.com/links/fl_test_95bZM3kLZmYYhGOkEOA2Yaw8"
+      ],
+      "livemode": false,
+      "metadata": {
+        "address": "707 Pacific Beach Drive, CA 92109",
+        "type": "Family"
+      },
+      "name": "Twin Room with Side Sea View",
+      "statement_descriptor": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1597658619
+    },
+   {
+     "id": "prod_HoGxYhWg3VpUn0",
+     "object": "product",
+     "active": true,
+     "attributes": [
+
+     ],
+     "created": 1597079005,
+     "description": "Two Beds • Indoor Pool • Cable",
+     "images": [
+       "https://files.stripe.com/links/fl_test_9ViwvrmquGjetjwpt95oHFbj"
+     ],
+     "livemode": false,
+     "metadata": {
+       "address": " 1333 Hotel Circle South, Mission, CA 92108",
+       "type": "Family"
+     },
+     "name": "Room with Two Beds Pool View",
+     "statement_descriptor": null,
+     "type": "service",
+     "unit_label": null,
+     "updated": 1597657204
+   },
+
+  ],
+  "has_more": true,
+  "url": "/v1/products"
+}
+

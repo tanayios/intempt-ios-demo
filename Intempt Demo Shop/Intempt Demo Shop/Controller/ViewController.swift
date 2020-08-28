@@ -66,6 +66,8 @@ class ViewController: UIViewController,UNUserNotificationCenterDelegate {
                                          }
                                          })
             self.profileName.text = "\(name)"
+                  //  self.changeEvent()
+                  //  self.loadPriceData()
                                 
           }
         else
@@ -81,8 +83,8 @@ class ViewController: UIViewController,UNUserNotificationCenterDelegate {
     SKActivityIndicator.show("", userInteractionStatus: true)
         if (NetworkState().isInternetAvailable) {
              DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.loadData()
 
-                        self.loadData()
                    }
                             }
        
@@ -104,8 +106,23 @@ class ViewController: UIViewController,UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler(.alert)
     }
+    func changeEvent()
+      {
+        self.productListItem = []
+       if let url = Bundle.main.url(forResource: "datas", withExtension: "json") {
+                             do {
+                                 let data = try Data(contentsOf: url)
+                                 let decoder = JSONDecoder()
+                                 self.productData  = try decoder.decode(productList.self, from: data)
+                                 self.productListItem = self.productData.data
+                             } catch {
+                                 print("error:\(error)")
+                             }
+                         }
+       }
     func loadData()
     {
+        self.productListItem = []
         let stripeAuthHeader: HTTPHeaders = [
             "Authorization": "Bearer sk_test_zjKhYcNvboNfRUCcrAaW7Pxs00wSbMTMGv"
         ]
@@ -119,8 +136,7 @@ class ViewController: UIViewController,UNUserNotificationCenterDelegate {
                 
                 self.productData  = try decoder.decode(productList.self, from: json!)
             
-                self.productListItem = self.productData.data
-                
+               self.productListItem = self.productData.data
                 print( self.productListItem.count)
                 self.loadPriceData()
                 
@@ -188,8 +204,10 @@ extension ViewController
                     self.btnSignIn.setTitle("Sign In", for: .normal)
                    self.imgView.isHidden = true
                    self.profileName.isHidden = true
+                    self.loadData()
                    loginManager.logOut()
                 } else {
+                   
                     // Access token not available -- user already logged out
                     // Perform log in
                     loginManager.logIn(permissions: [], from: self) { [weak self] (result, error) in
@@ -259,6 +277,8 @@ extension ViewController
                                                         let strFullName = "\(profile["first_name"]!) \(profile["last_name"]!)"
                                                         
                                                         Intempt.identify(strFullName, withProperties: nil, error: nil)
+                                                        self!.changeEvent()
+                                                        self!.loadPriceData()
                                                       }
                                                   case .failure(let error): print("kkk---\(error.localizedDescription)")
                                               }

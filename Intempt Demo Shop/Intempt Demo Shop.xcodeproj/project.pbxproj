@@ -29,6 +29,7 @@
 		ED897C1E24F51EDC00A65D8D /* intempt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED897C1B24F51ECF00A65D8D /* intempt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EDA21A202486C6CD005B8573 /* launchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA21A1F2486C6CD005B8573 /* launchViewController.swift */; };
 		EDA21A232486D814005B8573 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA21A222486D814005B8573 /* AppManager.swift */; };
+		EDFB03FD24F8F2B7008E1B05 /* datas.json in Resources */ = {isa = PBXBuildFile; fileRef = EDFB03FC24F8F2B7008E1B05 /* datas.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,6 +72,7 @@
 		ED897C1B24F51ECF00A65D8D /* intempt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = intempt.framework; sourceTree = "<group>"; };
 		EDA21A1F2486C6CD005B8573 /* launchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = launchViewController.swift; sourceTree = "<group>"; };
 		EDA21A222486D814005B8573 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		EDFB03FC24F8F2B7008E1B05 /* datas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = datas.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		ED3E85D42483BA2C003A943C /* Intempt Demo Shop */ = {
 			isa = PBXGroup;
 			children = (
+				EDFB03FC24F8F2B7008E1B05 /* datas.json */,
 				ED31BAA9249BE44C00C054FC /* FloatRatingView.swift */,
 				ED897C1B24F51ECF00A65D8D /* intempt.framework */,
 				ED3E85F42483F6B5003A943C /* loading.jpg */,
@@ -249,6 +252,7 @@
 				ED49F0FC249B75720076D8DA /* spa.jpg in Resources */,
 				ED3E85DF2483BA2E003A943C /* Assets.xcassets in Resources */,
 				ED3E85DD2483BA2C003A943C /* Main.storyboard in Resources */,
+				EDFB03FD24F8F2B7008E1B05 /* datas.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
