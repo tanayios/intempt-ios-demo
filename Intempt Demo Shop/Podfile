@@ -13,6 +13,5 @@ pod 'Kingfisher'
 
 pod 'FBSDKCoreKit'  
 pod 'FBSDKLoginKit'
-pod 'SKActivityIndicatorView'
 
 end

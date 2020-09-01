@@ -3,6 +3,8 @@
 import UIKit
 import FBSDKCoreKit
 import Stripe
+import UserNotifications
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -14,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                   didFinishLaunchingWithOptions: launchOptions
               )
         Stripe.setDefaultPublishableKey("pk_test_ljAFYrnnGBQFZKlS3RfRsHXo00O5vWWmBk")
+        UNUserNotificationCenter.current().delegate = PushManager.sharedInstance
 
+               PushManager.sharedInstance.registerForPushNotifications()
         return true
     }
     func application(
@@ -44,6 +48,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        PushManager.sharedInstance.didRegisterForRemoteNotifications(deviceToken: deviceToken)
+    }
+
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("didFailToRegisterForRemoteNotificationsWithError: \(error)")
     }
 
 

@@ -18,7 +18,6 @@ PODS:
     - Kingfisher/Core (= 5.14.0)
   - Kingfisher/Core (5.14.0)
   - SimpleKeychain (0.11.1)
-  - SKActivityIndicatorView (1.0.0)
   - Stripe (19.2.0)
 
 DEPENDENCIES:
@@ -27,7 +26,6 @@ DEPENDENCIES:
   - FBSDKCoreKit
   - FBSDKLoginKit
   - Kingfisher
-  - SKActivityIndicatorView
   - Stripe
 
 SPEC REPOS:
@@ -39,7 +37,6 @@ SPEC REPOS:
     - JWTDecode
     - Kingfisher
     - SimpleKeychain
-    - SKActivityIndicatorView
     - Stripe
 
 SPEC CHECKSUMS:
@@ -50,9 +47,8 @@ SPEC CHECKSUMS:
   JWTDecode: 4bd4da0cdf0f8154fd467fa48499f34ec057fb88
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
   SimpleKeychain: 0c657949c7afff92337d2ff64052d5eb5c53823e
-  SKActivityIndicatorView: 81c123380127ad497f9b57cd4d11347e40ab3427
   Stripe: d481c2dab9a892fd923f097f854661217f70dc7f
 
-PODFILE CHECKSUM: 2a2cb7a545256391abc3b99760407b2f4e10c0f6
+PODFILE CHECKSUM: c96f61f0ff515b843e68476ceb97fe1fe890b555
 
 COCOAPODS: 1.8.4

@@ -4,7 +4,7 @@ import UIKit
 import StoreKit
 import Stripe
 import Alamofire
-import intempt
+//import intempt
 //import SKActivityIndicatorView
 class paymentViewController: UIViewController,STPPaymentCardTextFieldDelegate {
     @IBOutlet var popup_view: UIView!
@@ -146,7 +146,7 @@ class paymentViewController: UIViewController,STPPaymentCardTextFieldDelegate {
                                                arrData.add(dic1)
                                             print(arrData)
                                                ///customEvent ///
-                                               Intempt.track("hotel-booking-app", withProperties: arrData, error: nil)
+                                             //  Intempt.track("hotel-booking-app", withProperties: arrData, error: nil)
                                         
                                         
                                         

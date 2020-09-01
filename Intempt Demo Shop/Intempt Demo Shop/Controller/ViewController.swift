@@ -7,7 +7,7 @@ import Auth0
 import Combine
 import FBSDKCoreKit
 import Stripe
-import intempt
+//import intempt
 import UserNotifications
 
 struct NetworkState {
@@ -17,7 +17,6 @@ struct NetworkState {
         return NetworkReachabilityManager()!.isReachable
     }
 }
-import SKActivityIndicatorView
 class ViewController: UIViewController,UNUserNotificationCenterDelegate {
      @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var profileName: UILabel!
@@ -41,7 +40,7 @@ class ViewController: UIViewController,UNUserNotificationCenterDelegate {
         super.viewDidLoad()
         //Put Intempt Provide UDID
         //IntemptClient.shared()?.uuidString("2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6");
-        IntemptClient.shared()?.delegate = self
+       // IntemptClient.shared()?.delegate = self
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { granted, error in
             print("Permission granted? \(granted)")
@@ -79,8 +78,7 @@ class ViewController: UIViewController,UNUserNotificationCenterDelegate {
         }
     
         tblView.tableFooterView = UIView()
-    SKActivityIndicator.spinnerStyle(.defaultSpinner)
-    SKActivityIndicator.show("", userInteractionStatus: true)
+   
         if (NetworkState().isInternetAvailable) {
              DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.loadData()
@@ -142,7 +140,6 @@ class ViewController: UIViewController,UNUserNotificationCenterDelegate {
                 
             }catch let err{
                 print(err)
-                SKActivityIndicator.dismiss()
 
             }
             
@@ -168,12 +165,10 @@ class ViewController: UIViewController,UNUserNotificationCenterDelegate {
                 
                 print(self.productPriceData)
                 self.tblView.reloadData()
-                SKActivityIndicator.dismiss()
 
                 
             }catch let err{
                 print(err)
-               SKActivityIndicator.dismiss()
 
             }
             
@@ -276,7 +271,7 @@ extension ViewController
                                                         
                                                         let strFullName = "\(profile["first_name"]!) \(profile["last_name"]!)"
                                                         
-                                                        Intempt.identify(strFullName, withProperties: nil, error: nil)
+//                                                        Intempt.identify(strFullName, withProperties: nil, error: nil)
                                                         self!.changeEvent()
                                                         self!.loadPriceData()
                                                       }
@@ -489,18 +484,18 @@ extension ViewController: LoginButtonDelegate {
 
 }
 
-extension ViewController:intemptDelegate
-{
-    func didEnterRegion(_ beaconData: CLBeacon!) {
-        
-    }
-    
-    func didExitRegion(_ beaconData: CLBeacon!) {
-        
-    }
-    
-   
-    
-    
-    
-}
+//extension ViewController:intemptDelegate
+//{
+//    func didEnterRegion(_ beaconData: CLBeacon!) {
+//        
+//    }
+//    
+//    func didExitRegion(_ beaconData: CLBeacon!) {
+//        
+//    }
+//    
+//   
+//    
+//    
+//    
+//}

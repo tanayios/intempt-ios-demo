@@ -1,14 +1,14 @@
 
 
 import UIKit
-import intempt
+//import intempt
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        Intempt.tracking(withOrgId: "intempt-hotel-demo", andSourceId: "105149339429433344", andToken: "jAxLS9GWwxGHbJWQAMIDG3tWvDP5m21m.1RrX3N409K9lo6co4CaLjEVVqaR_cURNeTejT5BK8Q5svnbFCNbtudkiy1JV1THM")
+//        Intempt.tracking(withOrgId: "intempt-hotel-demo", andSourceId: "105149339429433344", andToken: "jAxLS9GWwxGHbJWQAMIDG3tWvDP5m21m.1RrX3N409K9lo6co4CaLjEVVqaR_cURNeTejT5BK8Q5svnbFCNbtudkiy1JV1THM")
         
 
         guard let _ = (scene as? UIWindowScene) else { return }
